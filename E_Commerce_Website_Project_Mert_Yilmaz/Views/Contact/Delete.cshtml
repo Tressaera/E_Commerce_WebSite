@@ -1,0 +1,54 @@
+﻿@model E_Commerce_Website_Project_Mert_Yilmaz.Models.Contact
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center text-danger mb-4">Sil</h2>
+
+<h3 class="mb-4">Silmek istediğinize emin misiniz?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+           Ad Soyad
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdSoyad)
+        </dd>
+
+        <dt>
+         E-Mail
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+        Konu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Konu)
+        </dd>
+
+        <dt>
+           Mesaj
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mesaj)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> 
+        </div>
+    }
+</div>

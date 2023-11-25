@@ -1,0 +1,64 @@
+﻿@model ViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center text-danger">Ürün Tablosu</h2>
+<table class="table table-bordered table-striped">
+<thead>
+    <tr>
+    <th>ID</th>
+    <th>Ürün Adı</th>
+    </tr>
+</thead>
+    <tbody>
+        @foreach(var item in Model.ProductsList)
+            {
+                <tr>
+                <th>@item.ProductID</th>
+                <th>@item.ProductName</th>
+                </tr>
+            }
+    </tbody>
+</table>
+<br />
+
+<h2 class="text-center text-danger">Kategori Tablosu</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Kategori Adı</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CategoriesList)
+        {
+            <tr>
+                <th>@item.CategoryID</th>
+                <th>@item.CategoryName</th>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+
+<h2 class="text-center text-danger">Müşteri Tablosu</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Şirket Adı</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CustomersList)
+        {
+            <tr>
+                <th>@item.CustomerID</th>
+                <th>@item.CompanyName</th>
+            </tr>
+        }
+    </tbody>
+</table>

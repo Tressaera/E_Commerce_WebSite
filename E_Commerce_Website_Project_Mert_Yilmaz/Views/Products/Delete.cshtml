@@ -1,0 +1,94 @@
+﻿@model E_Commerce_Website_Project_Mert_Yilmaz.Models.Products
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-danger text-center mb-4">Sil</h2>
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+           Ürün Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+         Birim Miktarı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityPerUnit)
+        </dd>
+
+        <dt>
+      Birim Fiyatı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+
+        <dt>
+          Birim Stok
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitsInStock)
+        </dd>
+
+        <dt>
+     Birim Sipariş
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitsOnOrder)
+        </dd>
+
+        <dt>
+        Yeniden Sipariş
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReorderLevel)
+        </dd>
+
+        <dt>
+          Durdurulan
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discontinued)
+        </dd>
+
+        <dt>
+         Kategori Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categories.CategoryName)
+        </dd>
+
+        <dt>
+      Şirket Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suppliers.CompanyName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> 
+        </div>
+    }
+</div>

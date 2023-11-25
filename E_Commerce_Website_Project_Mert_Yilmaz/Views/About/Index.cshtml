@@ -1,0 +1,18 @@
+﻿@using E_Commerce_Website_Project_Mert_Yilmaz.Models
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="best-features about-features">
+    <div class="container">
+        <h2 class="mb-4">Hakkımızda</h2>
+        @foreach (var item in Model)
+        {
+            <img src="@item.Resim" alt="" />
+            <h4 class="mt-4 text-dark">@item.Aciklama</h4>
+        }
+    </div>
+</div>
+

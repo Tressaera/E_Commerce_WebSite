@@ -1,0 +1,87 @@
+﻿@model IEnumerable<E_Commerce_Website_Project_Mert_Yilmaz.Models.Customers>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-dark text-center mb-4">Anasayfa</h2>
+
+<p>
+    @Html.ActionLink("Yeni Oluştur", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+         Şirket Adı
+        </th>
+        <th>
+        İletişim
+        </th>
+        <th>
+      Başlık
+        </th>
+        <th>
+    Adres
+        </th>
+        <th>
+           Şehir
+        </th>
+        <th>
+      Bölge
+        </th>
+        <th>
+      Posta Kodu
+        </th>
+        <th>
+      Ülke
+        </th>
+        <th>
+    Telefon
+        </th>
+        <th>
+      Fax
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Region)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostalCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fax)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.CustomerID }, new {@class="btn btn-success"}) 
+            @Html.ActionLink("Sil", "Delete", new { id=item.CustomerID }, new {@class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>

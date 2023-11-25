@@ -1,0 +1,46 @@
+﻿@model IEnumerable<E_Commerce_Website_Project_Mert_Yilmaz.Models.Categories>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-dark text-center mb-4">Index</h2>
+@ViewBag.msj
+<p>
+    @Html.ActionLink("Yeni Oluştur", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Kategori Adı
+        </th>
+        <th>
+            Açıklama
+        </th>
+        <th>
+            Resim
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Picture)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Edit", new { id = item.CategoryID }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Sil", "Delete", new { id = item.CategoryID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

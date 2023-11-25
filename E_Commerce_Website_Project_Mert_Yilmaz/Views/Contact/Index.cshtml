@@ -1,0 +1,53 @@
+﻿@model IEnumerable<E_Commerce_Website_Project_Mert_Yilmaz.Models.Contact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center text-dark mb-4">İletişim</h2>
+
+<p>
+    @Html.ActionLink("Yeni Oluştur", "Create")
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+          Ad Soyad
+        </th>
+        <th>
+          E-Mail
+        </th>
+        <th>
+         Konu
+        </th>
+        <th>
+        Mesaj
+        </th>
+        <th>
+         İşlemler
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Konu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mesaj)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.ID }, new {@class="btn btn-success"}) 
+            @Html.ActionLink("Sil", "Delete", new { id=item.ID }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
